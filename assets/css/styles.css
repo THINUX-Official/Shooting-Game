@@ -15,9 +15,26 @@ section.info {
     border: 1px solid white;
 }
 
+#score {
+    position: absolute;
+    right: 200px;
+    margin-top: 10px;
+}
+
+#time {
+    position: absolute;
+    left: 10px;
+    margin-top: 10px;
+}
+
 section.faces {
     position: relative;
-    border: 1px solid white;
+    /*border: 1px solid white;*/
     height: 500px;
     cursor: crosshair;
+}
+
+* {
+    font-family: Poppins;
+    color: white;
 }
