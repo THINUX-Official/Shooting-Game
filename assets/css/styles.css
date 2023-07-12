@@ -1,0 +1,23 @@
+body {
+    background: black;
+}
+
+section.gun > img {
+    position: absolute;
+    bottom: 0;
+    right: 400px;
+}
+
+section.info {
+    position: relative;
+    top: 0;
+    height: 40px;
+    border: 1px solid white;
+}
+
+section.faces {
+    position: relative;
+    border: 1px solid white;
+    height: 500px;
+    cursor: crosshair;
+}
