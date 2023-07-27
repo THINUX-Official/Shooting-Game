@@ -8,6 +8,10 @@ section.gun > img {
     right: 400px;
 }
 
+#gunImage {
+    /*transition: opacity 1s ease-in-out; !* Adjust the transition duration as needed *!*/
+}
+
 section.info {
     position: relative;
     top: 0;
@@ -27,7 +31,7 @@ section.info {
     margin-top: -11px;
 }
 
-#timer{
+#timer {
     position: absolute;
     left: 100px;
     margin-top: -6px;
@@ -45,4 +49,10 @@ section.area {
 * {
     font-family: Poppins;
     color: white;
+}
+
+#faces {
+    width: 50px;
+    height: 50px;
+    display: none;
 }
