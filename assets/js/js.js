@@ -1,5 +1,7 @@
 $(".area").on("click", function () {
     sound();
+
+    gunAnimation();
 });
 
 function sound() {
@@ -15,7 +17,18 @@ function sound() {
     }
 }
 
+/*gun animation*/
+
+let gunFire = ["assets/img/pistol/2.png", "assets/img/pistol/3.png",
+    "assets/img/pistol/4.png", "assets/img/pistol/5.png", "assets/img/pistol/6.png"];
+
+let currentIndex = 0;
+const gunImage  = document.getElementById("gunImage");
+
 function gunAnimation() {
+
+    gunImage.src = gunFire[currentIndex];
+    currentIndex =(currentIndex + 1) % gunFire.length;
 
 }
 
