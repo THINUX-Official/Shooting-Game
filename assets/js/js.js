@@ -9,6 +9,8 @@ $(".area").on("click", function () {
 {
     function sound() {
         let audio = document.getElementById("audio");
+        let gunImage = document.getElementById("gunImage");
+
 
         if (audio.paused) {
             audio.currentTime = 0;
@@ -66,12 +68,21 @@ $(".area").on("click", function () {
             document.getElementById("faces").style.borderRadius = "50%";
 
             // face change with the time get
+            let time = 1;
+
+            let face1 = "assets/img/faces/1.png";
+            let face2 = "assets/img/faces/2.png";
+            let face3 = "assets/img/faces/3.png";
+            let face4 = "assets/img/faces/4.png";
+
             if (time < 1) {
-                document.getElementById("faces").style.backgroundColor = "greenyellow";
+                document.getElementById("faces").src = face1;
             } else if (time >= 1 && time < 2) {
-                document.getElementById("faces").style.backgroundColor = "dodgerblue";
-            } else if (time >= 2) {
-                document.getElementById("faces").style.backgroundColor = "red";
+                document.getElementById("faces").src = face2;
+            } else if (time >= 2 && time < 3) {
+                document.getElementById("faces").src = face3;
+            } else if (time >= 3) {
+                document.getElementById("faces").src = face4;
             }
         }
 
