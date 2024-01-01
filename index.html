@@ -20,21 +20,21 @@
 
 <section class="info">
 
-    <div>
-        <h2 id="time">Time :</h2>
-
-        <h3><div id="timer"></div></h3>
+    <div class="time">
+        <h3 style="font-weight: normal">Time : </h3>
+        <h3 id="timer"></h3>
     </div>
 
-    <div>
-        <h2 id="score">Score :</h2>
+    <div class="score">
+        <h3 style="font-weight: normal">Score : </h3>
+        <h3 id="score">000</h3>
     </div>
 
 </section>
 
 <section class="area">
 
-    <img id="faces" alt="Face Targets" onclick="faceSpawns()" src="assets/img/faces/1.png" height="50" width="50"/>
+    <img draggable="false" id="faces" alt="Face Targets" onclick="faceSpawns()" src="assets/img/faces/1.png"/>
 
     <audio id="audio" src="assets/audio/blaster.mp3"></audio>
 
@@ -42,10 +42,11 @@
 
 
 <section class="gun">
-    <img id="gunImage" alt="Gun Image" onclick="gunAnimation()" src="assets/img/pistol/1.png" height="355" width="333"/>
+    <img draggable="false" id="gunImage" alt="Gun Image" onclick="gunAnimation()" src="assets/img/pistol/1.png"
+         height="355" width="333"/>
 </section>
 
-<script src="assets/js/jquery-3.7.0.min.js"></script>
+<script src="assets/js/jquery-3.7.1.min.js"></script>
 <script src="assets/js/js.js"></script>
 
 </body>

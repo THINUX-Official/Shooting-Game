@@ -13,38 +13,44 @@ section.gun > img {
     /*transition: opacity 1s ease-in-out; !* Adjust the transition duration as needed *!*/
 }
 
-section.info {
+.info {
+    display: flex;
     position: relative;
-    top: 0;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-left: 50px;
+    margin-right: 50px;
+
     height: 40px;
-    border: 1px solid white;
+    /*background-color: aqua;*/
 }
 
-#score {
-    position: absolute;
-    right: 200px;
-    margin-top: -11px;
-}
-
-#time {
-    position: absolute;
-    left: 10px;
-    margin-top: -11px;
+.time {
+    display: flex;
 }
 
 #timer {
-    position: absolute;
-    left: 100px;
-    margin-top: -6px;
+    padding-left: 10px;
+    font-weight: bolder;
 }
 
-section.area {
+.score {
+    display: flex;
+}
+
+#score {
+    padding-left: 10px;
+    font-weight: bolder;
+}
+
+.area {
     position: relative;
     /*border: 1px solid white;*/
+    margin-left: 50px;
+    margin-right: 50px;
     height: 500px;
     cursor: crosshair;
-
-    caret-color: transparent;
 }
 
 * {
@@ -55,5 +61,6 @@ section.area {
 #faces {
     width: 50px;
     height: 50px;
-    display: none;
+    /*display: none;*/
+    position: relative;
 }

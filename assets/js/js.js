@@ -54,8 +54,8 @@ $(".area").on("click", function () {
     function faceSpawns() {
         function shapeAppear() {
             // random appearing location
-            var top = Math.random() * 500;
-            var left = Math.random() * 500;
+            var top = Math.random() * 400;
+            var left = Math.random() * 1400;
 
             document.getElementById("faces").style.display = "block";
 
@@ -87,7 +87,7 @@ $(".area").on("click", function () {
         }
 
         function shapeAppearDelay() {
-            setTimeout(shapeAppear, Math.random() * 1500);
+            setTimeout(shapeAppear, Math.random() * 1000);
         }
 
         shapeAppearDelay();
