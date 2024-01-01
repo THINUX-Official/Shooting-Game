@@ -1,5 +1,5 @@
 * {
-    font-family: Poppins;
+    font-family: Poppins, serif;
     color: white;
 }
 
@@ -29,6 +29,21 @@ body {
 #timer {
     padding-left: 10px;
     font-weight: bolder;
+}
+
+.game {
+
+}
+
+#start {
+    width: 200px;
+    height: 30px;
+
+    color: black;
+    font-weight: bold;
+
+    background-color: white;
+    border: white;
 }
 
 .score {
