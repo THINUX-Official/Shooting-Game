@@ -1,11 +1,11 @@
 $(".area").click(function () { // when click the area, all the function control through here
     gunAnimation();
-    shootingSound();
+    // shootingSound();
     faceSpawns();
-    shootingSound(); // calling twice this method is fixed the issue.
+    // shootingSound(); // calling twice this method is fixed the issue.
 });
 
-// shootingSound animation =============================================================================================
+// sounds ==============================================================================================================
 
 function shootingSound() {
     let shootingSound = $("#shootingSound")[0];
@@ -60,62 +60,51 @@ function gunAnimation() {
 
 // face spawns =========================================================================================================
 
-let start = new Date().getTime();
-let end = new Date().getTime();
-let time = ((end - start) / 1000); // execution time
+// let start = new Date().getTime();
+// let end = new Date().getTime();
+// let time = ((end - start) / 1000); // execution time
 
 function faceSpawns() {
     function shapeAppear() {
-        // random appearing location
-        let top = Math.random() * 400;
-        let left = Math.random() * 1400;
+        // generate random appearing locations.
+        let top = Math.random() * 350;
+        let left = Math.random() * 1450;
 
-        document.getElementById("faces").style.display = "block";
+        $("#faces").css("display", "block"); // make the face visible.
+        $("#faces").css("text", "center");
+        $("#faces").css({"top": top + "px", "left": left + "px"}); // set the position of the face element.
 
-        start = new Date().getTime();
-
-        document.getElementById("faces").style.top = top + "px";
-        document.getElementById("faces").style.left = left + "px";
-
-        // change the shape of the element
-        document.getElementById("faces").style.borderRadius = "50%";
-
-        // face change with the time get
-        let time = 1;
-
-        let face1 = "assets/img/faces/1.png";
+        /*let face1 = "assets/img/faces/1.png";
         let face2 = "assets/img/faces/2.png";
         let face3 = "assets/img/faces/3.png";
-        let face4 = "assets/img/faces/4.png";
+        let face4 = "assets/img/faces/4.png";*/
 
-        if (time < 1) {
-            document.getElementById("faces").src = face1;
-        } else if (time >= 1 && time < 2) {
-            document.getElementById("faces").src = face2;
-        } else if (time >= 2 && time < 3) {
-            document.getElementById("faces").src = face3;
-        } else if (time >= 3) {
-            document.getElementById("faces").src = face4;
-        }
+        /*if (time < 1000) {
+            $("#faces").attr("src", face1);
+        } else if (time >= 1000 && time < 2000) {
+            $("#faces").attr("src", face2);
+        } else if (time >= 2000 && time < 3000) {
+            $("#faces").attr("src", face3);
+        } else if (time >= 3000) {
+            $("#faces").attr("src", face4);
+        }*/
     }
 
-    function shapeAppearDelay() {
-        setTimeout(shapeAppear, Math.random() * 1000);
-    }
+    let clickCount = 0;
+    let score = 0;
 
-    shapeAppearDelay();
+    $("#faces").click(function () {
+        clickCount++;
+        score = clickCount;
 
-    document.getElementById("faces").onclick = function () {
-        document.getElementById("faces").style.display = "none";
+        console.log("click count" + score);
 
-        end = new Date().getTime();
-        time = ((end - start) / 1000); // execution time
+        $("#score").text(score);
 
-        // set the time
-        // document.getElementById("time").innerHTML = time + "s";
+        $("#faces").css("display", "none");
 
-        shapeAppearDelay();
-    }
+        shapeAppear();
+    });
 }
 
 // one-minute timer ====================================================================================================
@@ -158,6 +147,11 @@ let display = $("#timer"); // select the element with the id "timer".
 // start button ========================================================================================================
 
 $("#start").click(function () {
+
+    $("#log").css("display", "none"); // make the face visible.
+
+    faceSpawns();
+
     if (type === 'start') {
         startSound();
         // start timer
