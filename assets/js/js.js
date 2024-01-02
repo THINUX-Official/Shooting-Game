@@ -1,5 +1,3 @@
-// Start button
-
 /*all the function control through here*/
 $(".area").on("click", function () {
     faceSpawns();
@@ -8,11 +6,9 @@ $(".area").on("click", function () {
 });
 
 /*sound animation*/
-
 function sound() {
     let audio = document.getElementById("audio");
-    let gunImage = document.getElementById("gunImage");
-
+    // let gunImage = document.getElementById("gunImage");
 
     if (audio.paused) {
         audio.currentTime = 0;
@@ -23,7 +19,6 @@ function sound() {
         audio.pause();
     }
 }
-
 
 /*gun animation*/
 
@@ -113,10 +108,12 @@ $(document).ready(function () { // ensure, code that inside this function will l
     $("#timer").text("00:00"); // display timer before start.
 
     let timeInterval;
-    let isTimeRunning = false; // whether the timer is currently running or paused.
     let remainingTime = 0;
+    let type = 'start'; // toggle variable(change values) for the button, and it will hold values such as start, pause and resume.
 
     function startTimer(duration, display) { // countdown and update the display.
+
+        clearInterval(timeInterval); // check if timeout is running, it will be closed first.
 
         let timer = duration;
 
@@ -135,27 +132,31 @@ $(document).ready(function () { // ensure, code that inside this function will l
             if (--timer < 0) {
                 clearInterval(timeInterval); //  stops the timer from counting down further.
                 timer = duration; //  restarts the timer, allowing it to count down again from the specified duration.
-                isTimeRunning = false;
                 $("#start").text("START");
             }
         }, 1000); // 1000 milliseconds (1 second).
-
-        isTimeRunning = true;
-        $("#start").text("PAUSE"); // display timer after pause.
     }
 
     let oneMinute = 60; // set the duration of the timer to one minute.
     let display = $("#timer"); // select the element with the id "timer".
 
     $("#start").click(function () {
-        if (!isTimeRunning) {
-            $("#timer").text("00:00"); // display timer before start.
-            timeInterval = startTimer(oneMinute, display); // start the timer.
-        } else {
+        if (type === 'start') {
+            // start timer
+            startTimer(oneMinute, display);
+            type = 'pause';
+            $("#start").text("PAUSE");
+
+        } else if (type === 'pause') {
+            type = 'resume';
+            $("#start").text("RESUME");
             clearInterval(timeInterval);
-            isTimeRunning = false;
             remainingTime = oneMinute - ($("#timer").text().split(':')[0] * 60 + parseInt($("#timer").text().split(':')[1]));
-            $("#start").text("RESUME"); // display timer after resume.
+
+        } else if (type === 'resume') {
+            type = 'pause';
+            $("#start").text("PAUSE");
+            startTimer(oneMinute - remainingTime, display);
         }
     });
 });
