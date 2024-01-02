@@ -1,12 +1,12 @@
-// all the function control through here
-$(".area").click(function () {
+$(".area").click(function () { // when click the area, all the function control through here
     gunAnimation();
     shootingSound();
     faceSpawns();
     shootingSound(); // calling twice this method is fixed the issue.
 });
 
-// shootingSound animation
+// shootingSound animation =============================================================================================
+
 function shootingSound() {
     let shootingSound = $("#shootingSound")[0];
 
@@ -35,7 +35,8 @@ function unpauseSound() {
     unpauseSound.play();
 }
 
-// gun animation
+// gun animation =======================================================================================================
+
 let gunFire = ["assets/img/pistol/1.png", "assets/img/pistol/2.png", "assets/img/pistol/3.png", "assets/img/pistol/4.png", "assets/img/pistol/5.png"];
 
 let currentIndex = 0;
@@ -57,8 +58,8 @@ function gunAnimation() {
     }, 500);
 }
 
+// face spawns =========================================================================================================
 
-// face spawns
 let start = new Date().getTime();
 let end = new Date().getTime();
 let time = ((end - start) / 1000); // execution time
@@ -117,8 +118,8 @@ function faceSpawns() {
     }
 }
 
+// one-minute timer ====================================================================================================
 
-// one-minute timer
 $("#timer").text("00:00"); // display timer before start.
 
 let timeInterval;
@@ -154,8 +155,8 @@ function startTimer(duration, display) { // countdown and update the display.
 let oneMinute = 60; // set the duration of the timer to one minute.
 let display = $("#timer"); // select the element with the id "timer".
 
+// start button ========================================================================================================
 
-// start button.
 $("#start").click(function () {
     if (type === 'start') {
         startSound();
