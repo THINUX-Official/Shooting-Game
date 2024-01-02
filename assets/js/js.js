@@ -1,23 +1,38 @@
 // all the function control through here
 $(".area").click(function () {
     gunAnimation();
-    sound();
+    shootingSound();
     faceSpawns();
-    sound(); // calling twice this method is fixed the issue.
+    shootingSound(); // calling twice this method is fixed the issue.
 });
 
-// sound animation
-function sound() {
-    let audio = $("#audio")[0];
+// shootingSound animation
+function shootingSound() {
+    let shootingSound = $("#shootingSound")[0];
 
-    if (audio.paused) {
-        audio.currentTime = 0;
-        audio.play();
+    if (shootingSound.paused) {
+        shootingSound.currentTime = 0;
+        shootingSound.play();
         // Remove the "ended" event listener after the first play
-        audio.removeEventListener("ended");
+        shootingSound.removeEventListener("ended");
     } else {
-        audio.pause();
+        shootingSound.pause();
     }
+}
+
+function startSound() {
+    let startSound = $("#startSound")[0];
+    startSound.play();
+}
+
+function pauseSound() {
+    let pauseSound = $("#pauseSound")[0];
+    pauseSound.play();
+}
+
+function unpauseSound() {
+    let unpauseSound = $("#unpauseSound")[0];
+    unpauseSound.play();
 }
 
 // gun animation
@@ -143,18 +158,21 @@ let display = $("#timer"); // select the element with the id "timer".
 // start button.
 $("#start").click(function () {
     if (type === 'start') {
+        startSound();
         // start timer
         startTimer(oneMinute, display);
         type = 'pause';
         $("#start").text("PAUSE");
 
     } else if (type === 'pause') {
+        unpauseSound();
         type = 'resume';
         $("#start").text("RESUME");
         clearInterval(timeInterval);
         remainingTime = oneMinute - ($("#timer").text().split(':')[0] * 60 + parseInt($("#timer").text().split(':')[1]));
 
     } else if (type === 'resume') {
+        pauseSound();
         type = 'pause';
         $("#start").text("PAUSE");
         startTimer(oneMinute - remainingTime, display);
