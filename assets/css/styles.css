@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+
 * {
     font-family: Poppins, serif;
     color: white;
@@ -92,27 +94,87 @@ body {
     margin: auto;
 
     border-radius: 5px;
+
+    /*From https://css.glass */
+    /*background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);*/
 }
 
 #title {
     color: black;
-    padding-top: 100px;
+
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+
 }
 
 #desc {
     color: black;
-    padding-top: 10px;
     font-weight: normal;
 }
 
 #credits {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
     color: black;
-    padding-top: 200px;
     font-weight: normal;
 }
 
 #thinux {
     color: black;
-    padding-top: 200px;
     font-weight: bold;
+}
+
+#restart {
+    top: 0;
+    display: none;
+    background-color: white;
+
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+
+    border-radius: 5px;
+}
+
+#gameOver {
+    color: black;
+    font-size: 100px;
+    font-family: "Rubik Wet Paint", serif;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+#finalScore {
+    color: black;
+    font-weight: normal;
+}
+
+#btnRestart {
+    margin-top: 20px;
+    color: white;
+    background-color: gray;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    transition: background-color 0.3s;
+}
+
+#btnRestart:hover {
+    background-color: darkgray; /* Change the background color on hover */
+}
+
+#btnRestart:active {
+    background-color: lightgray; /* Change the background color when the button is clicked */
 }
