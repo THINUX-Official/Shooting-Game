@@ -127,7 +127,6 @@ function tryAgain() {
                 $("#start").text("START");
                 timerFinished = true;
                 gameOver();
-                gameOver();
             }
         }, 1000); // 1000 milliseconds (1 second).
     }
@@ -136,10 +135,10 @@ function tryAgain() {
     let display = $("#timer"); // select the element with the id "timer".
 
 // start button ========================================================================================================
-
-    let s =  scoreCount();
+    $("#faces").css("display", "none"); // make the face visible.
 
     function start() {
+
         $("#start").click(function () {
 
             $("#log").css("display", "none"); // make the face visible.
