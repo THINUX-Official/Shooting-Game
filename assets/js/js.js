@@ -1,9 +1,8 @@
 function tryAgain() {
+
     $(".area").click(function () { // when click the area, all the function control through here
         gunAnimation();
-        // shootingSound();
-        // shapeAppear();
-        // shootingSound(); // calling twice this method is fixed the issue.
+        shootingSound();
     });
 
 // sounds ==============================================================================================================
@@ -11,13 +10,13 @@ function tryAgain() {
     function shootingSound() {
         let shootingSound = $("#shootingSound")[0];
 
-        if (shootingSound.paused) {
+        if (!shootingSound.paused) {
             shootingSound.currentTime = 0;
             shootingSound.play();
-            // Remove the "ended" event listener after the first play
-            shootingSound.removeEventListener("ended");
+
         } else {
             shootingSound.pause();
+            shootingSound.play();
         }
     }
 
@@ -72,7 +71,7 @@ function tryAgain() {
     });
 
     $(".area").mouseleave(function () {
-       $("#gunImage").css('transform', 'translateX(0)');
+        $("#gunImage").css('transform', 'translateX(0)');
     });
 
 // face spawns =========================================================================================================

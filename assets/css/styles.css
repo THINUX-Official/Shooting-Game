@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+
 * {
     font-family: Poppins, serif;
     color: white;
@@ -46,6 +47,8 @@ body {
 
     background-color: white;
     border: white;
+
+    cursor: pointer;
 }
 
 .score {
@@ -76,7 +79,6 @@ body {
 #gunImage {
     transition: left 10s ease; /* Add smooth transition */
 }
-
 
 #faces {
     width: 50px;
@@ -173,6 +175,8 @@ body {
     border-radius: 5px;
     padding: 8px 20px;
     transition: background-color 0.3s;
+
+    cursor: pointer;
 }
 
 #btnRestart:hover {
