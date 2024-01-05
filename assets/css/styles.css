@@ -77,7 +77,7 @@ body {
 }
 
 #gunImage {
-    transition: left 10s ease; /* Add smooth transition */
+    /*transition: left 10s ease; !* Add smooth transition *!*/
 }
 
 #faces {

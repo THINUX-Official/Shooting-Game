@@ -40,14 +40,13 @@ function tryAgain() {
     let gunFire = ["assets/img/pistol/1.png", "assets/img/pistol/2.png", "assets/img/pistol/3.png", "assets/img/pistol/4.png", "assets/img/pistol/5.png"];
 
     let currentIndex = 0;
-// let gunImage = document.getElementById("gunImage");
     let gunImage = $("#gunImage")[0];
 
     function gunAnimation() {
 
         let interval = setInterval(function () {
-            gunImage.src = gunFire[currentIndex];
             currentIndex = (currentIndex + 1) % gunFire.length;
+            gunImage.src = gunFire[currentIndex];
         }, 100); // Time interval between each image change (adjust as needed)
 
         // After some time, stop the animation and show the default image
