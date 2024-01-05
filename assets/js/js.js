@@ -137,6 +137,8 @@ function tryAgain() {
 
 // start button ========================================================================================================
 
+    let s =  scoreCount();
+
     function start() {
         $("#start").click(function () {
 
@@ -153,7 +155,7 @@ function tryAgain() {
 
             } else if (type === 'pause') {
                 unpauseSound();
-
+                gamePause();
                 type = 'resume';
                 $("#start").text("RESUME");
                 clearInterval(timeInterval);
@@ -161,6 +163,7 @@ function tryAgain() {
 
             } else if (type === 'resume') {
                 pauseSound();
+                gameResume();
                 type = 'pause';
                 $("#start").text("PAUSE");
                 startTimer(oneMinute - remainingTime, display);
@@ -179,10 +182,17 @@ function tryAgain() {
             $("#start").css("display", "none"); // make the face visible.
             $("#faces").css("display", "none"); // make the face visible.
 
-
             let finalScore = $("#score").text()
             $("#finalScore").text(finalScore);
         }
+    }
+
+    function gamePause() {
+        $("#faces").css("display", "none"); // make the face visible.
+    }
+
+    function gameResume() {
+        $("#faces").css("display", "block"); // make the face visible.
     }
 }
 
