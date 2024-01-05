@@ -105,7 +105,9 @@ body {
 }
 
 #title {
+    padding-top: 100px;
     color: black;
+    font-size: 50px;
 
     position: relative;
     left: 0;

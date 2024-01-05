@@ -199,4 +199,5 @@ tryAgain();
 
 $("#btnRestart").click(function () {
     tryAgain();
+    location.reload(true);
 });
