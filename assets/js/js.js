@@ -39,6 +39,16 @@ function tryAgain() {
 
     let gunFire = ["assets/img/pistol/1.png", "assets/img/pistol/2.png", "assets/img/pistol/3.png", "assets/img/pistol/4.png", "assets/img/pistol/5.png"];
 
+    // Preload gun images
+    function preloadImages(images) {
+        for (let i = 0; i < images.length; i++) {
+            let img = new Image();
+            img.src = images[i];
+        }
+    }
+
+    preloadImages(gunFire); // Preload the gun images
+
     let currentIndex = 0;
     let gunImage = $("#gunImage")[0];
 
