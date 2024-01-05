@@ -59,6 +59,22 @@ function tryAgain() {
         }, 500);
     }
 
+    $(".area").mousemove(function (event) {
+        let mouseX = event.pageX;
+        let areaWidth = $('.area').width();
+        let halfArea = areaWidth / 2;
+
+        if (mouseX < halfArea) {
+            $("#gunImage").css('transform', 'translateX(-100px)');
+        } else {
+            $("#gunImage").css('transform', 'translateX(100px)');
+        }
+    });
+
+    $(".area").mouseleave(function () {
+       $("#gunImage").css('transform', 'translateX(0)');
+    });
+
 // face spawns =========================================================================================================
 
     function shapeAppear() {
@@ -131,7 +147,7 @@ function tryAgain() {
         }, 1000); // 1000 milliseconds (1 second).
     }
 
-    let oneMinute = 5; // set the duration of the timer to one minute.
+    let oneMinute = 59; // set the duration of the timer to one minute.
     let display = $("#timer"); // select the element with the id "timer".
 
 // start button ========================================================================================================

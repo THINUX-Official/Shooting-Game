@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
-
 * {
     font-family: Poppins, serif;
     color: white;
@@ -9,6 +8,7 @@ body {
     background: black;
     user-select: none;
     height: 100vh;
+    overflow: hidden;
 }
 
 .info {
@@ -60,6 +60,7 @@ body {
 .area {
     /*border: 1px solid white;*/
     position: relative;
+    width: 94vw;
     margin-left: 50px;
     margin-right: 50px;
     height: 500px;
@@ -73,8 +74,9 @@ body {
 }
 
 #gunImage {
-
+    transition: left 10s ease; /* Add smooth transition */
 }
+
 
 #faces {
     width: 50px;
