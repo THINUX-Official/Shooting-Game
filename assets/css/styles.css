@@ -68,16 +68,13 @@ body {
     margin-right: 50px;
     height: 500px;
     cursor: crosshair;
+    z-index: 10;
 }
 
 .gun {
     position: absolute;
     bottom: 0;
     right: 400px;
-}
-
-#gunImage {
-    /*transition: left 10s ease; !* Add smooth transition *!*/
 }
 
 #faces {
@@ -87,6 +84,8 @@ body {
     position: absolute;
     top: 50%;
     left: 49%;
+
+    z-index: 10;
 }
 
 #log {
@@ -99,13 +98,11 @@ body {
 
     border-radius: 5px;
 
-    /*From https://css.glass */
-    /*background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);*/
+    /*From https://css.glass*/
+    /*background: rgba(255, 255, 255, 0.1);*/
+    /*box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
+    /*backdrop-filter: blur(5px);*/
+    /*-webkit-backdrop-filter: blur(5px);*/
 }
 
 #title {
@@ -117,7 +114,6 @@ body {
     left: 0;
     right: 0;
     margin: auto;
-
 }
 
 #desc {
