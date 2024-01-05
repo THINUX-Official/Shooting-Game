@@ -34,10 +34,6 @@ body {
     font-weight: bolder;
 }
 
-.game {
-
-}
-
 #start {
     width: 200px;
     height: 30px;
@@ -67,7 +63,7 @@ body {
     margin-left: 50px;
     margin-right: 50px;
     height: 500px;
-    cursor: crosshair;
+    cursor: url("../img/crossHair/target.png") 10 10, auto;
     z-index: 10;
 }
 
